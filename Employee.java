@@ -1,67 +1,50 @@
-import java.util.Comparator;
+package com.cg.eis.beans;
 
-class SortByName implements Comparator<Employee>{
+public class Employee {
+	private int EmpId;
+	private String EmpName;
+	private int Salary;
+	private String InsScheme;
+	private String Designation;
+	public int getEmpId() {
+		return EmpId;
+	}
+	public void setEmpId(int empId) {
+		EmpId = empId;
+	}
+	public String getEmpName() {
+		return EmpName;
+	}
+	public void setEmpName(String empName) {
+		EmpName = empName;
+	}
 
-	@Override
-	public int compare(Employee o1, Employee o2) {
-	//	System.out.println(o1.getDesignation());
-		return o1.getName().compareTo(o2.getName());
-	}
-	
-}
-public class Employee implements Comparable<Employee>,Comparator<Employee>{
-	private  String Name;
-	private  String Designation;
-	public  String getName() {
-		return Name;
-	}
-	public  void setName(String name) {
-		Name = name;
-	}
-	public String getDesignation()
-	{
-		return Designation;
-	}
-	public void setDesignation(String designation)
-	{
-		Designation=designation;
-	}
-	@Override
-	public int hashCode() {
-		System.out.println("hashcode called");
-		return Name.length();
-	}
-	public boolean equals(Object obj)
-	{
-		System.out.println("equals method called");
-		Employee emp=(Employee)obj;
-//		System.out.println(Name+" "+emp.getName()+" : "+Designation+" "+emp.getDesignation());
-		System.out.println("hash code"+emp.hashCode());
-		if(Name.equals(emp.getName()) && Designation.equals(emp.getDesignation()))
-		{
-//			System.out.println("exist");
-			return true;
-		}
-		return false;		
-	}
 	@Override
 	public String toString() {
-		return "Employee [Name=" + Name + ", Designation=" + Designation + "]";
+		return "Employee [EmpId=" + EmpId + ", EmpName=" + EmpName + ", Salary=" + Salary + ", InsScheme=" + InsScheme
+				+ ", Designation=" + Designation + "]";
 	}
-	public Employee(String name, String designation) {
+	public Employee(int empId, String empName, int salary,String designation,String insScheme) {
 		super();
-		Name = name;
-		Designation = designation;
+		EmpId = empId;
+		EmpName = empName;
+		Salary = salary;
+Designation = designation;
+InsScheme = insScheme;
 	}
-	//@Override
-	public int compareTo(Employee emp) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getSalary() {
+		return Salary;
 	}
-	@Override
-	public int compare(Employee o1, Employee o2) {
-		
-		return 0;
+	public void setSalary(int salary) {
+		Salary = salary;
 	}
-}
+	//public String getDesignation() {
+		//return Designation;
+	//}
+	//public void setDesignation(String designation) {
+		//Designation = designation;
+//	
+	
 
+
+}
